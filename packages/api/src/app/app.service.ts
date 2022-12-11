@@ -1,26 +1,20 @@
 import { Injectable } from '@nestjs/common';
-
-interface User {
-  user_id: string;
-  user_name: string;
-  city_id: number;
-  address: string;
-  contact_phone: string;
-  email: string;
-  confirmation_code: string;
-  password: string;
-  time_joined: string;
-}
+import { User } from '@janettra-workspace/shared-types';
 
 @Injectable()
 export class AppService {
   private users: User[] = [];
+
   getData(): User[] {
     return this.users;
   }
 
-  add(user_name: string, contact_phone: string): void {
-    this.users.push({
+  async getById(id: string) {
+    return this.users.find((user) => user.user_id === id);
+  }
+
+  async add(user_name: string, contact_phone: string): Promise<User> {
+    const user = {
       user_id: this.users.length.toString(),
       user_name,
       contact_phone,
@@ -30,7 +24,26 @@ export class AppService {
       email: '',
       password: '',
       time_joined: '',
-    });
+      active: true,
+    };
+    this.users.push(user);
+
+    return user;
+  }
+
+  async edit(id: string, data: User): Promise<User> {
+    this.users = this.users.map((user) =>
+      user.user_id === id ? { ...user, ...data } : user
+    );
+
+    return data;
+  }
+
+  async destroy(id: string): Promise<string> {
+    this.users = this.users.map((user) =>
+      user.user_id === id ? { ...user, active: false } : user
+    );
+    return id;
   }
 
   setPaassword(id: string, password: string): void {

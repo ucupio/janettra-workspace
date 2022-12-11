@@ -10,6 +10,13 @@
     "react-native-config": "*",
     "react-native-svg": "*",
     "@react-native-async-storage/async-storage": "*",
-    "metro-config": "*"
+    "metro-config": "*",
+    "@rneui/themed": "*",
+    "react-native-appearance": "*",
+    "react-native-safe-area-context": "*",
+    "@rneui/base": "*",
+    "react-native-gesture-handler": "*",
+    "react-native-reanimated": "*",
+    "react-native-screens": "*"
   }
 }

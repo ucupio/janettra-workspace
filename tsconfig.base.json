@@ -15,7 +15,11 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@janettra-workspace/shared-types": ["packages/shared-types/src/index.ts"]
+      "@janettra-workspace/data-access": ["packages/data-access/src/index.ts"],
+      "@janettra-workspace/shared-types": [
+        "packages/shared-types/src/index.ts"
+      ],
+      "@janettra-workspace/ui": ["packages/ui/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
