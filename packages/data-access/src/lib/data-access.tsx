@@ -1,28 +1,17 @@
-import { User } from '@janettra-workspace/shared-types';
 import { createStore, applyMiddleware } from 'redux';
-import createSagaMiddleware from '@redux-saga/core';
-import reducers from './reducers';
-export { rootSaga } from './actions/userAction';
 
-export const sagaMiddleware = createSagaMiddleware();
+import createSagaMiddleware from 'redux-saga';
 
-export const store = createStore(reducers, applyMiddleware(sagaMiddleware));
+import RootReducer from './reducers';
 
-export const selectUsers = (state: User[]) => state;
+import RootSaga from './sagas/RootSagas';
 
-export const fetchUsers = () => ({ type: 'USERS_FETCH_REQUESTED' });
-export const toggleUser = (user: User) => ({
-  type: 'UPDATE_USER_REQUESTED',
-  payload: {
-    ...user,
-    password: !user.password,
-  },
-});
-export const removeUser = (user: User) => ({
-  type: 'DELETE_USER_REQUESTED',
-  payload: user,
-});
-export const addUser = (text: string) => ({
-  type: 'CREATE_USER_REQUESTED',
-  payload: text,
-});
+import actions from './actions';
+
+const sagaMiddleware = createSagaMiddleware();
+
+const store = createStore(RootReducer, applyMiddleware(sagaMiddleware));
+
+sagaMiddleware.run(RootSaga);
+
+export { store, RootSaga, RootReducer, actions };

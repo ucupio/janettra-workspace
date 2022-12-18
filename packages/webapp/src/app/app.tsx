@@ -1,12 +1,9 @@
-import { useEffect, useCallback, useState, useRef } from 'react';
+import { useEffect, useCallback, useRef } from 'react';
 import { Route, Routes, Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import {
-  fetchUsers,
-  selectUsers,
-  addUser,
-} from '@janettra-workspace/data-access';
-import { updateUser } from 'packages/data-access/src/lib/api';
+import { actions } from '@janettra-workspace/data-access';
+
+const { selectUsers, fetchUsers, addUser } = actions.userAction;
 
 export function App() {
   const dispatch = useDispatch();

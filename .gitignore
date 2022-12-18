@@ -102,3 +102,5 @@ buck-out/
 
 
 packages/rnapp-e2e/artifacts
+
+.env
