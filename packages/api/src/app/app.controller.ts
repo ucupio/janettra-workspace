@@ -12,7 +12,7 @@ import {
 
 import { AppService } from './app.service';
 
-@Controller('users')
+@Controller('app')
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
