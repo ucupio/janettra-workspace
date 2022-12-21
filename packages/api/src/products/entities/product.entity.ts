@@ -25,6 +25,9 @@ export class Product {
 
   @Prop()
   active: string;
+
+  @Prop()
+  image: string;
 }
 
 export const ProductSchema = SchemaFactory.createForClass(Product);
