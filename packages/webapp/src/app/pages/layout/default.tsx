@@ -6,7 +6,6 @@ import {
   useMantineTheme,
   Text,
   Aside,
-  Footer,
   Header,
   Burger,
   createStyles,
@@ -31,8 +30,41 @@ interface DefaultLayoutProps {
 
 const mockdata = [
   { label: 'Dashboard', icon: IconGauge, link: '/' },
+
   {
-    label: 'Home',
+    label: 'Produk',
+    icon: IconCalendarStats,
+    links: [
+      { label: 'Tambah Produk', link: '/products/add' },
+      { label: 'Edit Produk', link: '/products/edit' },
+    ],
+  },
+  {
+    label: 'Category',
+    icon: IconPresentationAnalytics,
+    links: [
+      { label: 'Tambah Kategori', link: '/cateory/add' },
+      { label: 'Ubah kategori', link: '/category/edit' },
+    ],
+  },
+  {
+    label: 'Order',
+    icon: IconFileAnalytics,
+    links: [
+      { label: 'Antrian', link: '/o' },
+      { label: 'Riwayat', link: '/products' },
+    ],
+  },
+  {
+    label: 'Promo',
+    icon: IconAdjustments,
+    links: [
+      { label: 'Tambah Produk', link: '/promo/add' },
+      { label: 'Edit Produk', link: '/promo/edit' },
+    ],
+  },
+  {
+    label: 'User',
     icon: IconNotes,
     links: [
       { label: 'Overview', link: '/users' },
@@ -42,24 +74,12 @@ const mockdata = [
     ],
   },
   {
-    label: 'Releases',
-    icon: IconCalendarStats,
-    links: [
-      { label: 'Upcoming releases', link: '/products' },
-      { label: 'Previous releases', link: '/products' },
-      { label: 'Releases schedule', link: '/products' },
-    ],
-  },
-  { label: 'Analytics', icon: IconPresentationAnalytics },
-  { label: 'Contracts', icon: IconFileAnalytics },
-  { label: 'Settings', icon: IconAdjustments },
-  {
-    label: 'Security',
+    label: 'Login',
     icon: IconLock,
     links: [
-      { label: 'Enable 2FA', link: '/' },
-      { label: 'Change password', link: '/' },
-      { label: 'Recovery codes', link: '/' },
+      { label: 'Enable 2FA', link: '/signin' },
+      { label: 'Change password', link: '/signup' },
+      { label: 'Recovery codes', link: '/signout' },
     ],
   },
 ];
@@ -85,6 +105,7 @@ const useStyles = createStyles((theme) => ({
   links: {
     marginLeft: -theme.spacing.md,
     marginRight: -theme.spacing.md,
+    textDecoration: 'none',
   },
 
   linksInner: {
@@ -130,15 +151,15 @@ export default function DefaultLayout({ children }: DefaultLayoutProps) {
           hidden={!opened}
           width={{ sm: 200, lg: 300 }}
         >
+          <Navbar.Section grow className={classes.links} component={ScrollArea}>
+            <div className={classes.linksInner}>{links}</div>
+          </Navbar.Section>
           <Navbar.Section className={classes.footer}>
             <UserButton
               image="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=255&q=80"
               name="Ann Nullpointer"
               email="anullpointer@yahoo.com"
             />
-          </Navbar.Section>
-          <Navbar.Section grow className={classes.links} component={ScrollArea}>
-            <div className={classes.linksInner}>{links}</div>
           </Navbar.Section>
         </Navbar>
       }
@@ -148,18 +169,6 @@ export default function DefaultLayout({ children }: DefaultLayoutProps) {
             <Text>Widget</Text>
           </Aside>
         </MediaQuery>
-      }
-      footer={
-        <Footer height={60} p="md">
-          Janettra @ Brebes 2022 | crafted with{' '}
-          <span role="img" aria-label="Love and spirit">
-            😎
-          </span>
-          &
-          <span role="img" aria-label="Love and spirit">
-            ❤️️
-          </span>
-        </Footer>
       }
       header={
         <Header height={{ base: 50, md: 70 }} p="md">

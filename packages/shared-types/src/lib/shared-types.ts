@@ -9,3 +9,8 @@ export interface User {
   password: string;
   time_joined: string;
 }
+
+export interface PayloadProps {
+  type: string;
+  payload: unknown;
+}

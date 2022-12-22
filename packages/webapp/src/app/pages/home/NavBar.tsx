@@ -8,7 +8,6 @@ import {
   IconAdjustments,
   IconLock,
 } from '@tabler/icons';
-import { JanettraLogo } from '../../../../../ui/src';
 import React from 'react';
 import { LinksGroup } from './NavbarLinkGroup';
 import { UserButton } from './NavbarButton';
@@ -96,7 +95,6 @@ export function NavbarNested() {
     <Navbar height={800} width={{ sm: 300 }} p="md" className={classes.navbar}>
       <Navbar.Section className={classes.header}>
         <Group position="apart">
-          <JanettraLogo width={120} />
           <Code sx={{ fontWeight: 700 }}>v3.1.2</Code>
         </Group>
       </Navbar.Section>

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Injectable, NestMiddleware } from '@nestjs/common';
 import { Request, Response, NextFunction } from 'express';
 
@@ -5,18 +6,25 @@ import { Request, Response, NextFunction } from 'express';
 import FormData = require('form-data');
 import axios from 'axios';
 
+interface MulterRequest extends Request {
+  file: any;
+}
+
 @Injectable()
 export class ImageKitMiddleware implements NestMiddleware {
   use(req: Request, res: Response, next: NextFunction) {
-    if (!req.file) {
+    if (!(req as MulterRequest).file) {
       next({ name: 'File required' });
     } else {
-      console.log(req);
+      console.log('masuk');
 
       const form = new FormData();
       const date = new Date().toLocaleDateString();
 
-      form.append('file', req.file.buffer.toString('base64'));
+      form.append(
+        'file',
+        (req as MulterRequest).file.buffer.toString('base64')
+      );
       form.append('fileName', `${req.body.productname}-${date}`);
 
       const bufferFrom = `${process.env.PRIVATE_KEY_IMAGEKIT}:`;
@@ -32,6 +40,8 @@ export class ImageKitMiddleware implements NestMiddleware {
         })
         .then(function (response) {
           req.body.image = response.data.url;
+          console.log(response.data.url);
+
           next();
         })
         .catch(function (error) {

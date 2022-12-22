@@ -1,1 +1,5 @@
-export * from './lib/logo/JanettraLogo';
+import Janettra from './lib/logo/JanettraLogo';
+
+export default {
+  Janettra,
+};

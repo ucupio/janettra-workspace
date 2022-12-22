@@ -17,4 +17,8 @@ export class UsersService {
   async getUser(query: object): Promise<User> {
     return this.userModel.findOne(query);
   }
+
+  async getUserById(id: number): Promise<User> {
+    return this.userModel.findById(id).exec();
+  }
 }

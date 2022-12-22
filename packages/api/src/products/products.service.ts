@@ -17,18 +17,18 @@ export class ProductsService {
   }
 
   findAll() {
-    return this.productModel.find().exec();
+    return this.productModel.find();
   }
 
-  findOne(id: number) {
-    return this.productModel.findById(id);
+  async findOne(id: string) {
+    return this.productModel.findById(id).exec();
   }
 
-  update(id: number, updateProductDto: UpdateProductDto) {
+  async update(id: string, updateProductDto: UpdateProductDto) {
     return this.productModel.findByIdAndUpdate(id, updateProductDto);
   }
 
-  remove(id: number) {
+  async remove(id: string) {
     return this.productModel.findByIdAndDelete(id);
   }
 }
