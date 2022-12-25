@@ -17,4 +17,9 @@ export class UsersController {
     const result = await this.usersService.createUser(username, hashedPassword);
     return result;
   }
+
+  @Post('/users')
+  async getUsers(req: object): Promise<User[]> {
+    return await this.usersService.getUsers(req);
+  }
 }

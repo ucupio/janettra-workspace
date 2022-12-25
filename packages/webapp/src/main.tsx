@@ -1,9 +1,9 @@
-import { store } from '@janettra-workspace/data-access';
 import { StrictMode } from 'react';
 import * as ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import { MantineProvider } from '@mantine/core';
+import { store } from '@janettra-workspace/data-access';
 
 import App from './app/app';
 import { theme } from './app/theme/default';
@@ -14,8 +14,8 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <StrictMode>
-    <BrowserRouter>
-      <Provider store={store}>
+    <Provider store={store}>
+      <BrowserRouter>
         <MantineProvider
           theme={theme}
           withCSSVariables
@@ -24,7 +24,7 @@ root.render(
         >
           <App />
         </MantineProvider>
-      </Provider>
-    </BrowserRouter>
+      </BrowserRouter>
+    </Provider>
   </StrictMode>
 );

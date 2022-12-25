@@ -1,0 +1,5 @@
+export const GET_PRODUCTS = 'GET_PRODUCTS';
+export const GET_PRODUCT_BY_ID = 'GET_PRODUCT_BYid';
+export const CREATE_PRODUCT = 'CREATE_PRODUCT';
+export const UPDATE_PRODUCT_BY_ID = 'UPDATE_PRODUCT_BYid';
+export const DELETE_PRODUCT_BY_ID = 'DELETE_PRODUCT_BYid';

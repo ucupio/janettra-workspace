@@ -39,6 +39,7 @@ export default function Signin(props: PaperProps) {
       <Text size="lg" weight={500}>
         Welcome to Janettra, {type} with
       </Text>
+      {JSON.stringify(form.values, null, 2)}
 
       <Group grow mb="md" mt="md">
         <GoogleButton radius="xl">Google</GoogleButton>
@@ -67,7 +68,7 @@ export default function Signin(props: PaperProps) {
           <TextInput
             required
             label="Email"
-            placeholder="hello@mantine.dev"
+            placeholder="input email"
             value={form.values.email}
             onChange={(event) =>
               form.setFieldValue('email', event.currentTarget.value)

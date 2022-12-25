@@ -185,7 +185,7 @@ export default function DefaultLayout({ children }: DefaultLayoutProps) {
               />
             </MediaQuery>
 
-            <Text>Janettra</Text>
+            <Text size={'xl'}>Janettra CMS</Text>
           </div>
         </Header>
       }

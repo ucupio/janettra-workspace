@@ -10,12 +10,12 @@ export class AppService {
   }
 
   async getById(id: string) {
-    return this.users.find((user) => user.user_id === id);
+    return this.users.find((user) => user.id === id);
   }
 
   async add(user_name: string, contact_phone: string): Promise<User> {
     const user = {
-      user_id: this.users.length.toString(),
+      id: this.users.length.toString(),
       user_name,
       contact_phone,
       address: '',
@@ -33,7 +33,7 @@ export class AppService {
 
   async edit(id: string, data: User): Promise<User> {
     this.users = this.users.map((user) =>
-      user.user_id === id ? { ...user, ...data } : user
+      user.id === id ? { ...user, ...data } : user
     );
 
     return data;
@@ -41,7 +41,7 @@ export class AppService {
 
   async destroy(id: string): Promise<string> {
     this.users = this.users.map((user) =>
-      user.user_id === id ? { ...user, active: false } : user
+      user.id === id ? { ...user, active: false } : user
     );
     return id;
   }
@@ -49,7 +49,7 @@ export class AppService {
   setPaassword(id: string, password: string): void {
     this.users = this.users.map((user) => ({
       ...user,
-      password: id === user.user_id ? password : user.password,
+      password: id === user.id ? password : user.password,
     }));
   }
 }

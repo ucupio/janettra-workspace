@@ -82,11 +82,11 @@ export function LinksGroup({
   const [opened, setOpened] = useState(initiallyOpened || false);
   const ChevronIcon = theme.dir === 'ltr' ? IconChevronRight : IconChevronLeft;
   const items = (hasLinks ? links : []).map((link) => (
-    <Link to={link.link}>
+    <Box component={Link} to={link.link}>
       <Text className={classes.link} key={link.label}>
         {link.label}
       </Text>
-    </Link>
+    </Box>
   ));
 
   return (
