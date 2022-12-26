@@ -8,12 +8,7 @@ import {
   UnstyledButton,
   createStyles,
 } from '@mantine/core';
-import {
-  TablerIcon,
-  IconCalendarStats,
-  IconChevronLeft,
-  IconChevronRight,
-} from '@tabler/icons';
+import { TablerIcon, IconChevronLeft, IconChevronRight } from '@tabler/icons';
 import { Link } from 'react-router-dom';
 
 const useStyles = createStyles((theme) => ({
@@ -37,9 +32,8 @@ const useStyles = createStyles((theme) => ({
   link: {
     fontWeight: 500,
     display: 'block',
-    textDecoration: 'none',
-    padding: `${theme.spacing.xs}px ${theme.spacing.md}px`,
-    paddingLeft: 31,
+    padding: `${theme.spacing.xs}px ${theme.spacing.xs}px`,
+    paddingLeft: 48,
     marginLeft: 30,
     fontSize: theme.fontSizes.sm,
     color:
@@ -68,13 +62,17 @@ interface LinksGroupProps {
   icon: TablerIcon;
   label: string;
   initiallyOpened?: boolean;
+  link?: string;
   links?: { label: string; link: string }[];
+  closeMenu: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 export function LinksGroup({
   icon: Icon,
   label,
   initiallyOpened,
+  link,
+  closeMenu,
   links,
 }: LinksGroupProps) {
   const { classes, theme } = useStyles();
@@ -82,7 +80,12 @@ export function LinksGroup({
   const [opened, setOpened] = useState(initiallyOpened || false);
   const ChevronIcon = theme.dir === 'ltr' ? IconChevronRight : IconChevronLeft;
   const items = (hasLinks ? links : []).map((link) => (
-    <Box component={Link} to={link.link}>
+    <Box
+      component={Link}
+      to={link.link}
+      sx={{ textDecoration: 'none' }}
+      onClick={() => closeMenu((o) => !o)}
+    >
       <Text className={classes.link} key={link.label}>
         {link.label}
       </Text>
@@ -96,7 +99,16 @@ export function LinksGroup({
         className={classes.control}
       >
         <Group position="apart" spacing={0}>
-          <Box sx={{ display: 'flex', alignItems: 'center' }}>
+          <Box
+            component={Link}
+            sx={{
+              display: 'flex',
+              alignItems: 'center',
+              textDecoration: 'none',
+            }}
+            to={link || ''}
+            onClick={() => closeMenu((o) => !o)}
+          >
             <ThemeIcon variant="light" size={30}>
               <Icon size={18} />
             </ThemeIcon>
@@ -118,30 +130,5 @@ export function LinksGroup({
       </UnstyledButton>
       {hasLinks ? <Collapse in={opened}>{items}</Collapse> : null}
     </>
-  );
-}
-
-const mockdata = {
-  label: 'Releases',
-  icon: IconCalendarStats,
-  links: [
-    { label: 'Upcoming releases', link: '/' },
-    { label: 'Previous releases', link: '/' },
-    { label: 'Releases schedule', link: '/' },
-  ],
-};
-
-export function NavbarLinksGroup() {
-  return (
-    <Box
-      sx={(theme) => ({
-        minHeight: 220,
-        padding: theme.spacing.md,
-        backgroundColor:
-          theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.white,
-      })}
-    >
-      <LinksGroup {...mockdata} />
-    </Box>
   );
 }

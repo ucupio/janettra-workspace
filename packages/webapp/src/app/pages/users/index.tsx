@@ -1,24 +1,22 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Code, Text } from '@mantine/core';
+import { Text } from '@mantine/core';
 
-import { User } from '@janettra-workspace/shared-types';
+import { StoreObject, User } from '@janettra-workspace/shared-types';
+import { DataTable } from '../components/table/DataTable';
 
 export default function UserPage() {
-  const users = useSelector(
-    (state: { users: { users: User[]; isLoaded: boolean } }) =>
-      state.users.users
-  );
+  const { users } = useSelector((state: StoreObject) => state);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch({ type: 'SET_IS_LOADED', payload: true });
+    dispatch({ type: 'GET_USERS' });
   }, [dispatch]);
 
   return (
     <div>
-      <Code>{JSON.stringify(users, null, 2)}</Code>
       <Text>User List</Text>
+      <DataTable<User> data={users}></DataTable>
     </div>
   );
 }

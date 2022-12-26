@@ -1,12 +1,12 @@
-import { useLocalStorage } from '@mantine/hooks';
+import { useSelector } from 'react-redux';
 import RoutesApp from './routes/RoutesApp';
 
 export function App() {
-  const [role] = useLocalStorage<string>({
-    key: 'role',
-    defaultValue: 'guest',
-  });
-  return <RoutesApp role={role} />;
+  const state = useSelector((state: unknown) => state);
+
+  console.log(state);
+
+  return <RoutesApp auth={true} />;
 }
 
 export default App;

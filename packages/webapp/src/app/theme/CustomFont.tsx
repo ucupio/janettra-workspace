@@ -15,7 +15,7 @@ export function CustomFonts() {
       styles={[
         {
           '@font-face': {
-            fontFamily: 'Greycliff CF',
+            fontFamily: 'Kanit',
             src: `url('./kanit/Kanit-ExtraLight.woff') format("woff2")`,
             fontWeight: 100,
             fontStyle: 'normal',
@@ -23,7 +23,7 @@ export function CustomFonts() {
         },
         {
           '@font-face': {
-            fontFamily: 'Greycliff CF',
+            fontFamily: 'Kanit',
             src: `url('./kanit/Kanit-Light.woff') format("woff2")`,
             fontWeight: 200,
             fontStyle: 'normal',
@@ -31,7 +31,7 @@ export function CustomFonts() {
         },
         {
           '@font-face': {
-            fontFamily: 'Greycliff CF',
+            fontFamily: 'Kanit',
             src: `url('./kanit/Kanit-Thin.woff') format("woff2")`,
             fontWeight: 300,
             fontStyle: 'normal',
@@ -39,7 +39,7 @@ export function CustomFonts() {
         },
         {
           '@font-face': {
-            fontFamily: 'Greycliff CF',
+            fontFamily: 'Kanit',
             src: `url('./kanit/Kanit-Regular.woff') format("woff2")`,
             fontWeight: 400,
             fontStyle: 'normal',
@@ -47,7 +47,7 @@ export function CustomFonts() {
         },
         {
           '@font-face': {
-            fontFamily: 'Greycliff CF',
+            fontFamily: 'Kanit',
             src: `url('./kanit/Kanit-Medium.woff') format("woff2")`,
             fontWeight: 500,
             fontStyle: 'normal',
@@ -55,7 +55,7 @@ export function CustomFonts() {
         },
         {
           '@font-face': {
-            fontFamily: 'Greycliff CF',
+            fontFamily: 'Kanit',
             src: `url('./kanit/Kanit-SemiBold.woff') format("woff2")`,
             fontWeight: 600,
             fontStyle: 'normal',
@@ -63,7 +63,7 @@ export function CustomFonts() {
         },
         {
           '@font-face': {
-            fontFamily: 'Greycliff CF',
+            fontFamily: 'Kanit',
             src: `url('./kanit/Kanit-Bold.woff') format("woff2")`,
             fontWeight: 700,
             fontStyle: 'normal',
@@ -71,7 +71,7 @@ export function CustomFonts() {
         },
         {
           '@font-face': {
-            fontFamily: 'Greycliff CF',
+            fontFamily: 'Kanit',
             src: `url('./kanit/Kanit-ExtraBold.woff') format("woff2")`,
             fontWeight: 800,
             fontStyle: 'normal',
@@ -79,7 +79,7 @@ export function CustomFonts() {
         },
         {
           '@font-face': {
-            fontFamily: 'Greycliff CF',
+            fontFamily: 'Kanit',
             src: `url('./kanit/Kanit-Black.woff') format("woff2")`,
             fontWeight: 900,
             fontStyle: 'normal',

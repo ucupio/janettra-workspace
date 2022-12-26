@@ -38,3 +38,10 @@ export interface PayloadProps {
   type: string;
   payload: unknown;
 }
+
+export interface StoreObject {
+  user: User;
+  users: User[];
+  product: Product;
+  products: Product[];
+}

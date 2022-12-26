@@ -19,10 +19,10 @@ import {
   IconPresentationAnalytics,
   IconFileAnalytics,
   IconAdjustments,
-  IconLock,
 } from '@tabler/icons';
 import { LinksGroup } from '../home/NavbarLinkGroup';
 import { UserButton } from '../home/NavbarButton';
+import { Link } from 'react-router-dom';
 
 interface DefaultLayoutProps {
   children: ReactJSXElement;
@@ -35,51 +35,40 @@ const mockdata = [
     label: 'Produk',
     icon: IconCalendarStats,
     links: [
-      { label: 'Tambah Produk', link: '/products/add' },
-      { label: 'Edit Produk', link: '/products/edit' },
+      { label: 'List Produk', link: '/products' },
+      { label: 'Add Produk', link: '/products/add' },
     ],
   },
   {
     label: 'Category',
     icon: IconPresentationAnalytics,
     links: [
-      { label: 'Tambah Kategori', link: '/cateory/add' },
-      { label: 'Ubah kategori', link: '/category/edit' },
+      { label: 'List Category', link: '/cateory' },
+      { label: 'Add Category', link: '/category/edit' },
     ],
   },
   {
     label: 'Order',
     icon: IconFileAnalytics,
     links: [
-      { label: 'Antrian', link: '/o' },
-      { label: 'Riwayat', link: '/products' },
+      { label: 'Antrian', link: '/orders' },
+      { label: 'Riwayat', link: '/orders/add' },
     ],
   },
   {
-    label: 'Promo',
+    label: 'Tracking',
     icon: IconAdjustments,
     links: [
-      { label: 'Tambah Produk', link: '/promo/add' },
-      { label: 'Edit Produk', link: '/promo/edit' },
+      { label: 'List Transactions', link: '/transactions' },
+      { label: 'Add Transactions', link: '/transactions/add' },
     ],
   },
   {
     label: 'User',
     icon: IconNotes,
     links: [
-      { label: 'Overview', link: '/users' },
-      { label: 'Forecasts', link: '/users' },
-      { label: 'Outlook', link: '/users' },
-      { label: 'Real time', link: '/users' },
-    ],
-  },
-  {
-    label: 'Login',
-    icon: IconLock,
-    links: [
-      { label: 'Enable 2FA', link: '/signin' },
-      { label: 'Change password', link: '/signup' },
-      { label: 'Recovery codes', link: '/signout' },
+      { label: 'List Users', link: '/users' },
+      { label: 'Add Users', link: '/users/add' },
     ],
   },
 ];
@@ -128,7 +117,7 @@ export default function DefaultLayout({ children }: DefaultLayoutProps) {
   const [opened, setOpened] = useState(false);
 
   const links = mockdata.map((item) => (
-    <LinksGroup {...item} key={item.label} />
+    <LinksGroup {...item} key={item.label} closeMenu={setOpened} />
   ));
   return (
     <AppShell
@@ -157,8 +146,8 @@ export default function DefaultLayout({ children }: DefaultLayoutProps) {
           <Navbar.Section className={classes.footer}>
             <UserButton
               image="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=255&q=80"
-              name="Ann Nullpointer"
-              email="anullpointer@yahoo.com"
+              name="User name"
+              email="user@yuhuu.com"
             />
           </Navbar.Section>
         </Navbar>
@@ -185,7 +174,9 @@ export default function DefaultLayout({ children }: DefaultLayoutProps) {
               />
             </MediaQuery>
 
-            <Text size={'xl'}>Janettra CMS</Text>
+            <Text component={Link} size={'xl'} to={'/'}>
+              Janettra CMS
+            </Text>
           </div>
         </Header>
       }

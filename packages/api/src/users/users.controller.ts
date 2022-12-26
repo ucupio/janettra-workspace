@@ -1,4 +1,4 @@
-import { Body, Controller, Post } from '@nestjs/common';
+import { Body, Controller, Get, Post } from '@nestjs/common';
 import { User } from './users.model';
 import { UsersService } from './users.service';
 import * as bcrypt from 'bcrypt';
@@ -18,8 +18,8 @@ export class UsersController {
     return result;
   }
 
-  @Post('/users')
-  async getUsers(req: object): Promise<User[]> {
-    return await this.usersService.getUsers(req);
+  @Get('/users')
+  async getUsers(): Promise<User[]> {
+    return await this.usersService.getUsers();
   }
 }

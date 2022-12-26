@@ -2,7 +2,8 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { Product } from '@janettra-workspace/shared-types';
-import { Code } from '@mantine/core';
+import { Container, Title } from '@mantine/core';
+import { DataTable } from '../components/table/DataTable';
 
 export default function Products() {
   const products = useSelector(
@@ -17,8 +18,9 @@ export default function Products() {
   console.log(products);
 
   return (
-    <Code>
-      <pre>{JSON.stringify(products, null, 2)}</pre>
-    </Code>
+    <Container>
+      <Title>Product List</Title>
+      <DataTable<Product> data={products.products} />
+    </Container>
   );
 }

@@ -15,17 +15,3 @@ export const loginFacebookAPI = async (
   username: string,
   password: string
 ): Promise<User> => axios.post('/login/facebook', { username, password });
-
-export const getUsersAPI = async () => axios.get('/api/auth/users');
-
-export const getUserByIdAPI = async (id: string) =>
-  axios.get(`/api/users/${id}`);
-
-export const createUserAPI = async (user: User) =>
-  axios.post(`/api/users`, user);
-
-export const updateUserAPI = async (user: User) =>
-  axios.put(`/api/users/${user.id}`, user);
-
-export const deleteUserByIdAPI = async (id: string) =>
-  axios.delete(`/api/users/${id}`);
