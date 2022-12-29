@@ -1,0 +1,113 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "src/app/assets/fonts/Kanit-Black.ttf",
+      "sha1": "7d7c545de2f02989d1f2a76849291b75f6e6b7e6"
+    },
+    {
+      "path": "src/app/assets/fonts/Kanit-Black.woff",
+      "sha1": "f149cfa1a90e996ca721e1c56198e9282902e9ef"
+    },
+    {
+      "path": "src/app/assets/fonts/Kanit-BlackItalic.ttf",
+      "sha1": "57556af8831c92f61f91098bcce27f60002c6192"
+    },
+    {
+      "path": "src/app/assets/fonts/Kanit-Bold.ttf",
+      "sha1": "4d376a5447efe2ece1e3e39ff0fc2bbf3af0e5f8"
+    },
+    {
+      "path": "src/app/assets/fonts/Kanit-Bold.woff",
+      "sha1": "fda4237393e849b9b7e0d7769b42995590345617"
+    },
+    {
+      "path": "src/app/assets/fonts/Kanit-BoldItalic.ttf",
+      "sha1": "a515d96e8b0ae666c180ff853f07282647cce78b"
+    },
+    {
+      "path": "src/app/assets/fonts/Kanit-ExtraBold.ttf",
+      "sha1": "e880d5f10a706034ca71f17c6534a3e76e1319ad"
+    },
+    {
+      "path": "src/app/assets/fonts/Kanit-ExtraBold.woff",
+      "sha1": "13d66c178f354c6841d5ad9a9d2d2f8e9c8c79d9"
+    },
+    {
+      "path": "src/app/assets/fonts/Kanit-ExtraBoldItalic.ttf",
+      "sha1": "1505f04535bfb9ecbab2452a192d32f431a057fd"
+    },
+    {
+      "path": "src/app/assets/fonts/Kanit-ExtraLight.ttf",
+      "sha1": "c948dac66c673a313a9b43294e35b73a14a0cf69"
+    },
+    {
+      "path": "src/app/assets/fonts/Kanit-ExtraLight.woff",
+      "sha1": "2aa5cdb2690b3beadb56fd8f096fe9d79cc00fb7"
+    },
+    {
+      "path": "src/app/assets/fonts/Kanit-ExtraLightItalic.ttf",
+      "sha1": "81e72743d10d5bfbb8e6c10df63473c59f461851"
+    },
+    {
+      "path": "src/app/assets/fonts/Kanit-Italic.ttf",
+      "sha1": "d4b45fa70b71d7d3bc31ec3c09341672c660db28"
+    },
+    {
+      "path": "src/app/assets/fonts/Kanit-Light.ttf",
+      "sha1": "5f73684474721ddfc98168f5b8a634d7552e89d4"
+    },
+    {
+      "path": "src/app/assets/fonts/Kanit-Light.woff",
+      "sha1": "9b802782c0047917ad3d5ce767e4cf336243e636"
+    },
+    {
+      "path": "src/app/assets/fonts/Kanit-LightItalic.ttf",
+      "sha1": "bfa800d600db0d72fda285fceaa2e0b5234f2faf"
+    },
+    {
+      "path": "src/app/assets/fonts/Kanit-Medium.ttf",
+      "sha1": "61ac6e618ea64ca7f4ae2444194e0bad4c72c8f9"
+    },
+    {
+      "path": "src/app/assets/fonts/Kanit-Medium.woff",
+      "sha1": "7299a0f07a02be3a15c0279112c4c3a1a2c506f4"
+    },
+    {
+      "path": "src/app/assets/fonts/Kanit-MediumItalic.ttf",
+      "sha1": "d4efe4ef0132a00a569ddcfb7bc292062fcd96ba"
+    },
+    {
+      "path": "src/app/assets/fonts/Kanit-Regular.ttf",
+      "sha1": "4d7b70e9717ae0adecc332fac9af7457063886a4"
+    },
+    {
+      "path": "src/app/assets/fonts/Kanit-Regular.woff",
+      "sha1": "083b22d4b4cf106b85fdd3f116d7d57e38d1f1fc"
+    },
+    {
+      "path": "src/app/assets/fonts/Kanit-SemiBold.ttf",
+      "sha1": "9715fb086966063735f84aa37f3e2dcd654ce999"
+    },
+    {
+      "path": "src/app/assets/fonts/Kanit-SemiBold.woff",
+      "sha1": "dbfcdd93f2c1d6a7be7d64aaaca34aead2d20d20"
+    },
+    {
+      "path": "src/app/assets/fonts/Kanit-SemiBoldItalic.ttf",
+      "sha1": "ab47c69150c1552dc01230b7acd9423e2c3e6c47"
+    },
+    {
+      "path": "src/app/assets/fonts/Kanit-Thin.ttf",
+      "sha1": "c01a1c4d8a0cad6b8b4988b03c9c8f3dfa19242c"
+    },
+    {
+      "path": "src/app/assets/fonts/Kanit-Thin.woff",
+      "sha1": "5c7e98d3afb1c9d66f4d23dc38bc78ab22ed52ec"
+    },
+    {
+      "path": "src/app/assets/fonts/Kanit-ThinItalic.ttf",
+      "sha1": "684a356c889f48a71ca6220d2e4d86fd884f917a"
+    }
+  ]
+}

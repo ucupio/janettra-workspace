@@ -6,7 +6,9 @@ import {
   ScrollArea,
   Group,
   Text,
+  Button,
 } from '@mantine/core';
+import { Link } from 'react-router-dom';
 
 const useStyles = createStyles((theme) => ({
   rowSelected: {
@@ -19,9 +21,10 @@ const useStyles = createStyles((theme) => ({
 
 interface DataTableProps<T> {
   data: Array<T>;
+  path?: string;
 }
 
-export function DataTable<T>({ data }: DataTableProps<T>) {
+export function DataTable<T>({ data, path }: DataTableProps<T>) {
   const { classes, cx } = useStyles();
   const [selection, setSelection] = useState(['1']);
 
@@ -85,6 +88,16 @@ export function DataTable<T>({ data }: DataTableProps<T>) {
           />
         </td>
         {columns(item as Record<string, string>)}
+        <td>
+          <Group position="left" sx={{ display: 'inline-flex' }}>
+            <Button component={Link} to={`./edit`} state={item} color={'cyan'}>
+              Edit
+            </Button>
+            <Button component={Link} to={`./delete`} state={item} color={'red'}>
+              Delete
+            </Button>
+          </Group>
+        </td>
       </tr>
     );
   });
@@ -101,7 +114,7 @@ export function DataTable<T>({ data }: DataTableProps<T>) {
       >
         <thead>
           <tr>
-            <th style={{ width: 20 }}>
+            <th>
               <Checkbox
                 onChange={toggleAll}
                 checked={selection.length === data.length}
@@ -112,6 +125,9 @@ export function DataTable<T>({ data }: DataTableProps<T>) {
               />
             </th>
             {columnHead(data[0] as object)}
+            <th>
+              <Text>ACTION</Text>
+            </th>
           </tr>
         </thead>
         <tbody>{rows}</tbody>

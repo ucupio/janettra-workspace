@@ -17,6 +17,17 @@
     "@rneui/base": "*",
     "react-native-gesture-handler": "*",
     "react-native-reanimated": "*",
-    "react-native-screens": "*"
+    "react-native-screens": "*",
+    "react-redux": "*",
+    "axios": "*",
+    "redux-saga": "*",
+    "@redux-saga/types": "*",
+    "@reduxjs/toolkit": "*",
+    "@redux-saga/core": "*",
+    "native-base": "*",
+    "@react-navigation/native": "*",
+    "@react-navigation/bottom-tabs": "*",
+    "@react-navigation/drawer": "*",
+    "@expo/vector-icons": "*"
   }
 }

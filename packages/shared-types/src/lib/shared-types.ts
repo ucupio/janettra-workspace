@@ -21,6 +21,75 @@ export interface Product {
   active: string;
   image: string;
 }
+
+export interface Category {
+  id: string;
+  categoryname: string;
+}
+
+export interface Blogs {
+  id: string;
+  title: string;
+  description: string;
+  content: string;
+  image: string;
+  categoryid: number;
+}
+
+export interface Payments {
+  id: string;
+  title: string;
+}
+
+export interface Order {
+  id: string;
+  user_id: string;
+  product_id: string;
+  quantity: number;
+  amount: number;
+}
+
+export interface Cart {
+  id: string;
+  user_id: string;
+  products: Product[];
+  quantity: number;
+}
+
+export interface Wishlist {
+  id: string;
+  user_id: string;
+  products: Product[];
+}
+
+export interface Inbox {
+  id: string;
+  user_id: string;
+  message: string;
+  date: string;
+  status: string;
+  attachment: string;
+}
+
+export interface History {
+  id: string;
+  user_id: string;
+  activity_id: string;
+}
+
+export interface Activity {
+  id: string;
+  user_name: string;
+  activityname: string;
+  date: string;
+  status: string;
+  amount: number;
+  menu: string;
+  subMenu: string;
+  data?: Record<string, string>;
+  old_data?: Record<string, string>;
+}
+
 export interface Auth {
   token: string;
 }

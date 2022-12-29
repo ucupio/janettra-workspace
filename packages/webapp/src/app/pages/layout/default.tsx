@@ -56,20 +56,17 @@ const mockdata = [
     ],
   },
   {
-    label: 'Tracking',
-    icon: IconAdjustments,
-    links: [
-      { label: 'List Transactions', link: '/transactions' },
-      { label: 'Add Transactions', link: '/transactions/add' },
-    ],
-  },
-  {
     label: 'User',
     icon: IconNotes,
     links: [
       { label: 'List Users', link: '/users' },
       { label: 'Add Users', link: '/users/add' },
     ],
+  },
+  {
+    label: 'Reports',
+    icon: IconAdjustments,
+    link: '/reports',
   },
 ];
 
