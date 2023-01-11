@@ -28,6 +28,8 @@
     "@react-navigation/native": "*",
     "@react-navigation/bottom-tabs": "*",
     "@react-navigation/drawer": "*",
-    "@expo/vector-icons": "*"
+    "@expo/vector-icons": "*",
+    "@react-navigation/native-stack": "*",
+    "react-native-vector-icons": "*"
   }
 }

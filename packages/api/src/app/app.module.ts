@@ -7,7 +7,9 @@ import {
 
 import { MongooseModule } from '@nestjs/mongoose';
 import { AuthModule } from '../auth/auth.module';
+import { CategoriesModule } from '../categories/categories.module';
 import { ImageKitMiddleware } from '../middlewares/imageKit';
+import { OrdersModule } from '../orders/orders.module';
 import { ProductsModule } from '../products/products.module';
 import { UsersModule } from '../users/users.module';
 import { AppController } from './app.controller';
@@ -24,6 +26,8 @@ const upload = multer({ storage: storage });
     AuthModule,
     UsersModule,
     ProductsModule,
+    OrdersModule,
+    CategoriesModule,
   ],
   controllers: [AppController],
   providers: [AppService],

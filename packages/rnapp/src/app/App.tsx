@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import { Provider } from 'react-redux';
+import { Provider, useDispatch, useSelector } from 'react-redux';
 import { store } from '@janettra-workspace/data-access';
 import { NativeBaseProvider, extendTheme } from 'native-base';
 import { NavigationContainer } from '@react-navigation/native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import HomeScreen from './screens/HomeScreen';
-import ProductScreen from './screens/Products';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { StoreObject } from '@janettra-workspace/shared-types';
+import LoginScreen from './screens/Auth/LoginScreen';
+import IndexScreen from './screens';
+
+const Stack = createNativeStackNavigator();
 
 const theme = extendTheme({
   fontConfig: {
@@ -56,26 +59,39 @@ const theme = extendTheme({
 });
 
 const Default = () => {
+  const auth = useSelector((state: StoreObject) => state.products);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch({ type: 'GET_AUTH' });
+  }, [dispatch]);
+
+  console.log(auth);
+
+  const tempAuth = true;
+
   return (
     <SafeAreaProvider>
-      <Tab.Navigator>
-        <Tab.Screen name="Home" component={HomeScreen} />
-        <Tab.Screen name="Product" component={ProductScreen} />
-      </Tab.Navigator>
+      <NavigationContainer>
+        <Stack.Navigator initialRouteName={tempAuth ? 'Root' : 'Login'}>
+          <Stack.Screen
+            name="Root"
+            component={IndexScreen}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen name="Login" component={LoginScreen} />
+        </Stack.Navigator>
+      </NavigationContainer>
     </SafeAreaProvider>
   );
 };
 
-const Tab = createBottomTabNavigator();
-
 export default function App() {
   return (
     <Provider store={store}>
-      <NavigationContainer>
-        <NativeBaseProvider theme={theme}>
-          <Default />
-        </NativeBaseProvider>
-      </NavigationContainer>
+      <NativeBaseProvider theme={theme}>
+        <Default />
+      </NativeBaseProvider>
     </Provider>
   );
 }

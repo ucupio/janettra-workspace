@@ -31,7 +31,7 @@ export function* loginFacebookSaga(action: UserAction) {
   yield put(setAuthSlice(true));
 }
 
-export function* watchUsersAsync() {
+export function* watchAuthAsync() {
   yield takeEvery<UserAction>(LOGIN_USER, loginUserSaga);
   yield takeEvery<UserAction>(LOGIN_FACEBOOK, loginFacebookSaga);
   yield takeEvery<UserAction>(LOGIN_GOOGLE, loginGoogleSaga);

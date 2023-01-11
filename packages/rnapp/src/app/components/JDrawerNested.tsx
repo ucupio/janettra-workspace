@@ -41,7 +41,7 @@ function LeftDrawerScreen() {
 
 const RightDrawer = createDrawerNavigator();
 
-function RightDrawerScreen() {
+function JDarawerNested() {
   return (
     <RightDrawer.Navigator
       useLegacyImplementation
@@ -57,4 +57,4 @@ function RightDrawerScreen() {
   );
 }
 
-export default RightDrawerScreen;
+export default JDarawerNested;
